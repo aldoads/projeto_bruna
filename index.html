@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Dra. Bruna Santana | Harmonização Facial & Rejuvenescimento Natural em Patos - PB</title>
+  <meta name="description" content="Planejamento facial individualizado, foco em naturalidade e segurança anatômica com a Dra. Bruna Santana. Atendimento em Patos - PB." />
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#FBFBF9',       // Off-white linho
+              card: '#FFFFFF',     // Branco puro
+              surface: '#F4F2EC',  // Bege acinzentado neutro
+              dark: '#1C1D1A',     // Grafite editorial profundo
+              muted: '#71706C',    // Texto de apoio
+              accent: '#8A7356',   // Bronze acetinado sofisticado
+              accentHover: '#735F45'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    h1, h2, h3, .font-serif {
+      font-feature-settings: "liga", "kern";
+      letter-spacing: -0.01em;
+    }
+
+    /* SCROLL REVEAL (Otimizado para 60/120fps no iPhone) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-zoom {
+      opacity: 0;
+      transform: scale(0.96) translateY(20px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active,
+    .reveal-zoom.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+  </style>
+</head>
+
+<body class="bg-brand-bg text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white overflow-x-hidden">
+
+  <!-- ================================================================= -->
+  <!-- 1. HEADER                                                         -->
+  <!-- ================================================================= -->
+  <header class="fixed top-0 left-0 w-full bg-brand-bg/90 backdrop-blur-md z-50 border-b border-brand-surface/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#" class="text-lg sm:text-xl font-serif tracking-widest uppercase font-medium">
+        DRA. BRUNA SANTANA
+        <span class="block text-[9px] tracking-[0.25em] font-sans text-brand-muted font-normal">HARMONIZAÇÃO OROFACIAL</span>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-brand-muted font-medium">
+        <a href="#filosofia" class="hover:text-brand-dark transition-colors">Filosofia</a>
+        <a href="#doutora" class="hover:text-brand-dark transition-colors">A Doutora</a>
+        <a href="#procedimentos" class="hover:text-brand-dark transition-colors">Procedimentos</a>
+        <a href="#metodo" class="hover:text-brand-dark transition-colors">O Método</a>
+        <a href="#faq" class="hover:text-brand-dark transition-colors">Dúvidas</a>
+      </nav>
+
+      <!-- CTA DESKTOP -->
+      <div class="hidden sm:block">
+        <a href="https://wa.me/5583996343411?text=Ol%C3%A1%2C%20Dra.%20Bruna!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-block bg-brand-dark text-white px-5 py-2.5 text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors duration-200">
+          Agendar Consulta
+        </a>
+      </div>
+
+      <!-- BOTÃO MOBILE -->
+      <button id="mobileMenuBtn" class="md:hidden text-brand-dark focus:outline-none p-2" aria-label="Menu de navegação">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- MENU MOBILE GAVETA -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-bg border-b border-brand-surface px-6 py-6 space-y-4 text-sm uppercase tracking-wider text-brand-muted">
+      <a href="#filosofia" class="block hover:text-brand-dark mobile-link">Filosofia</a>
+      <a href="#doutora" class="block hover:text-brand-dark mobile-link">A Doutora</a>
+      <a href="#procedimentos" class="block hover:text-brand-dark mobile-link">Procedimentos</a>
+      <a href="#metodo" class="block hover:text-brand-dark mobile-link">O Método</a>
+      <a href="#faq" class="block hover:text-brand-dark mobile-link">Dúvidas</a>
+      <a href="https://wa.me/5583996343411?text=Ol%C3%A1%2C%20Dra.%20Bruna!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." target="_blank" class="block pt-2 text-brand-accent font-medium">Agendar via WhatsApp →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================================================================= -->
+    <!-- 2. HERO SECTION                                                   -->
+    <!-- ================================================================= -->
+    <section class="pt-36 pb-20 md:pt-44 md:pb-28 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- TEXTO HERO -->
+        <div class="lg:col-span-7 space-y-6 reveal">
+          <div class="inline-flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+            <p class="text-xs uppercase tracking-[0.25em] text-brand-muted font-medium">Bela Vista · Patos - PB</p>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif leading-[1.12] text-brand-dark font-normal">
+            A harmonia do seu rosto não começa na agulha. <br class="hidden sm:inline"/>
+            <span class="italic font-normal text-brand-accent">Começa no respeito à sua anatomia.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-brand-muted font-light leading-relaxed max-w-xl">
+            Planejamento facial individualizado conduzido com base cirúrgica sólida. Resultados elegantes, perceptíveis e absolutamente fiéis à sua própria identidade.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="https://wa.me/5583996343411?text=Ol%C3%A1%2C%20Dra.%20Bruna!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="bg-brand-dark text-white px-8 py-4 text-xs uppercase tracking-widest text-center hover:bg-brand-accent transition-colors duration-200">
+              Agendar Avaliação Clínica
+            </a>
+            <a href="#filosofia" class="border border-brand-dark/20 text-brand-dark px-8 py-4 text-xs uppercase tracking-widest text-center hover:bg-brand-surface transition-colors">
+              Conhecer a Filosofia
+            </a>
+          </div>
+
+          <p class="text-xs text-brand-muted/80 pt-2">
+            Dra. Bruna Santana · Cirurgiã-Dentista · CRO-PB 5485
+          </p>
+        </div>
+
+        <!-- FOTO HERO (Placeholder de luxo pronto para troca) -->
+        <div class="lg:col-span-5 relative reveal-zoom delay-200">
+          <div class="relative w-full aspect-[4/5] bg-brand-surface overflow-hidden border border-brand-surface shadow-sm">
+            <!-- [SUBSTITUA] Quando tiver a foto dela, coloque em: ./assets/img/dra-bruna-hero.webp -->
+            <img src="https://images.unsplash.com/photo-1594824813579-22a84a7e930f?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Dra. Bruna Santana - Cirurgiã-Dentista" 
+                 class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-700">
+            
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-brand-dark/85 via-brand-dark/20 to-transparent text-white">
+              <p class="font-serif text-lg tracking-wide">Dra. Bruna Santana</p>
+              <p class="text-[11px] uppercase tracking-widest text-white/80 font-light">Harmonização Orofacial · CRO-PB 5485</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 3. MANIFESTO / OS 3 PILARES                                       -->
+    <!-- ================================================================= -->
+    <section id="filosofia" class="py-24 bg-brand-surface/40 border-y border-brand-surface">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="max-w-2xl mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-medium">Anti-excesso & Critério</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-brand-dark mt-2 font-normal">
+            A beleza não precisa de excessos. <br/><span class="italic">Precisa de proporção e anatomia.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Pilar 01 -->
+          <div class="bg-brand-card p-8 border border-brand-surface space-y-4 reveal delay-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+            <span class="text-xs font-serif italic text-brand-accent">01. Abordagem</span>
+            <h3 class="text-xl font-serif text-brand-dark">Leitura Global, Não Isolada</h3>
+            <p class="text-sm text-brand-muted leading-relaxed font-light">
+              Nenhuma região do rosto reage de forma isolada. Não tratamos um sulco ou uma queixa sem antes avaliar o suporte ósseo e a musculatura subjacente.
+            </p>
+          </div>
+
+          <!-- Pilar 02 -->
+          <div class="bg-brand-card p-8 border border-brand-surface space-y-4 reveal delay-200 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+            <span class="text-xs font-serif italic text-brand-accent">02. Essência</span>
+            <h3 class="text-xl font-serif text-brand-dark">Naturalidade Inegociável</h3>
+            <p class="text-sm text-brand-muted leading-relaxed font-light">
+              O bom procedimento é aquele que rende elogios ao seu semblante descansado e à textura da sua pele — nunca à intervenção estética em si.
+            </p>
+          </div>
+
+          <!-- Pilar 03 -->
+          <div class="bg-brand-card p-8 border border-brand-surface space-y-4 reveal delay-300 shadow-sm hover:-translate-y-1 transition-transform duration-300">
+            <span class="text-xs font-serif italic text-brand-accent">03. Ética Biológica</span>
+            <h3 class="text-xl font-serif text-brand-dark">Critério Clínico para Dizer Não</h3>
+            <p class="text-sm text-brand-muted leading-relaxed font-light">
+              Saber quando intervir exige estudo e técnica; saber quando recusar exige compromisso com você. Nem tudo o que pode ser injetado deve ser realizado.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 4. SOBRE A DOUTORA (Histórico Real: UFCG, UNIFIP, IOA-CG)        -->
+    <!-- ================================================================= -->
+    <section id="doutora" class="py-24 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Foto em Atendimento -->
+        <div class="lg:col-span-5 order-2 lg:order-1 reveal-zoom">
+          <div class="aspect-[3/4] bg-brand-surface overflow-hidden border border-brand-surface">
+            <!-- [SUBSTITUA] Foto dela com paciente ou materiais: ./assets/img/dra-bruna-clinica.webp -->
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" 
+                 alt="Dra. Bruna Santana em atendimento clínico" 
+                 class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Biografia e Autoridade -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 reveal delay-100">
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-medium">Trajetória e Fundamento</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-brand-dark font-normal">
+            11 anos dedicados à precisão anatômica <br/><span class="italic">com olhar minucioso para a estética.</span>
+          </h2>
+          
+          <div class="space-y-4 text-brand-muted text-sm sm:text-base leading-relaxed font-light">
+            <p>
+              A <strong>Dra. Bruna Santana</strong> (CRO-PB 5485) construiu sua formação com base no rigor científico e na cirurgia. Graduada pela renomada <strong>Universidade Federal de Campina Grande (UFCG)</strong>, soma mais de uma década de prática odontológica.
+            </p>
+            <p>
+              Com pós-graduação em <strong>Cirurgia Oral Menor pela UNIFIP</strong>, desenvolveu o domínio cirúrgico dos planos profundos, nervos e vascularização da face — competência crucial para garantir a máxima segurança e conforto anestésico em cada injeção.
+            </p>
+            <p>
+              Há 4 anos atua de forma constante na <strong>Harmonização Orofacial</strong>, aperfeiçoando-se continuamente em centros de referência como o <strong>IOA-CG</strong> e participando de atualizações nas condutas mais seguras da estética moderna.
+            </p>
+          </div>
+
+          <!-- Badges de Autoridade -->
+          <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-brand-surface">
+            <div class="flex items-start space-x-3">
+              <span class="text-brand-accent text-lg">✦</span>
+              <p class="text-xs uppercase tracking-wider text-brand-dark font-medium">Graduação UFCG (11 anos de formação)</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-brand-accent text-lg">✦</span>
+              <p class="text-xs uppercase tracking-wider text-brand-dark font-medium">Pós-Graduada em Cirurgia Oral Menor (UNIFIP)</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-brand-accent text-lg">✦</span>
+              <p class="text-xs uppercase tracking-wider text-brand-dark font-medium">Formação em Harmonização Facial (IOA-CG)</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="text-brand-accent text-lg">✦</span>
+              <p class="text-xs uppercase tracking-wider text-brand-dark font-medium">4 anos de atuação clínica dedicada à HOF</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 5. PROCEDIMENTOS OFICIAIS (Os 4 tratamentos dela)                 -->
+    <!-- ================================================================= -->
+    <section id="procedimentos" class="py-24 bg-brand-surface/30 border-t border-brand-surface">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="max-w-2xl mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-medium">Protocolos Clínicos</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-brand-dark mt-2 font-normal">
+            Tratamentos executados sob <br/><span class="italic">estrito critério de indicação.</span>
+          </h2>
+          <p class="text-sm text-brand-muted mt-3 font-light">
+            Procedimentos com foco em devolver frescor, jovialidade e saúde tecidual, sem transformações artificiais.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Card 1: Botox Preventivo -->
+          <div class="bg-brand-card p-8 sm:p-10 border border-brand-surface flex flex-col justify-between hover:border-brand-accent/40 transition-all duration-300 reveal delay-100 shadow-sm">
+            <div class="space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-muted">01 · Linhas Dinâmicas</span>
+              <h3 class="text-2xl font-serif text-brand-dark">Botox Preventivo</h3>
+              <p class="text-sm text-brand-muted leading-relaxed font-light">
+                Modulação precisa da musculatura da face para prevenir a formação de rugas estáticas e atenuar linhas de expressão na testa, glabela e olhos. O objetivo é suavizar o olhar preservando sua mímica e expressividade natural.
+              </p>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-brand-accent font-medium pt-8">Expressão Descansada · Sem Efeito Congelado</span>
+          </div>
+
+          <!-- Card 2: Estruturação Facial -->
+          <div class="bg-brand-card p-8 sm:p-10 border border-brand-surface flex flex-col justify-between hover:border-brand-accent/40 transition-all duration-300 reveal delay-200 shadow-sm">
+            <div class="space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-muted">02 · Sustentação & Contorno</span>
+              <h3 class="text-2xl font-serif text-brand-dark">Protocolo de Estruturação com Ácido Hialurônico</h3>
+              <p class="text-sm text-brand-muted leading-relaxed font-light">
+                Reposição volumétrica estratégica nos compartimentos profundos da face. Devolve o suporte ósseo perdido pelo envelhecimento, definindo contornos e proporções com materiais biocompatíveis e 100% reversíveis.
+              </p>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-brand-accent font-medium pt-8">Suporte Facial · Segurança e Reversibilidade</span>
+          </div>
+
+          <!-- Card 3: Bioestímulo de Colágeno -->
+          <div class="bg-brand-card p-8 sm:p-10 border border-brand-surface flex flex-col justify-between hover:border-brand-accent/40 transition-all duration-300 reveal delay-100 shadow-sm">
+            <div class="space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-muted">03 · Firmeza Dérmica</span>
+              <h3 class="text-2xl font-serif text-brand-dark">Bioestímulo de Colágeno</h3>
+              <p class="text-sm text-brand-muted leading-relaxed font-light">
+                Indução progressiva da produção celular de colágeno pelo próprio organismo. Trata a flacidez em sua origem, reespessando a derme e recuperando a sustentação dos tecidos com durabilidade estendida.
+              </p>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-brand-accent font-medium pt-8">Ação Gradual · Melhora Estrutural da Pele</span>
+          </div>
+
+          <!-- Card 4: Skinbooster -->
+          <div class="bg-brand-card p-8 sm:p-10 border border-brand-surface flex flex-col justify-between hover:border-brand-accent/40 transition-all duration-300 reveal delay-200 shadow-sm">
+            <div class="space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-muted">04 · Hidratação Profunda</span>
+              <h3 class="text-2xl font-serif text-brand-dark">Skinbooster & Refinamento</h3>
+              <p class="text-sm text-brand-muted leading-relaxed font-light">
+                Hidratação profunda por meio de microdepósitos de ácido hialurônico de baixa reticulação na derme. Melhora visivelmente a textura, suaviza linhas finas de desidratação e devolve o viço radiante à pele.
+              </p>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-brand-accent font-medium pt-8">Viço Imediato · Densidade e Elasticidade</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 6. O MÉTODO / JORNADA DO PACIENTE                                 -->
+    <!-- ================================================================= -->
+    <section id="metodo" class="py-24 max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-16 reveal">
+        <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-medium">A Jornada do Atendimento</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-brand-dark mt-2 font-normal">
+          Como funciona a sua consulta.
+        </h2>
+        <p class="text-sm text-brand-muted mt-2 font-light">
+          Processo transparente, cuidadoso e sem surpresas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="space-y-3 border-t border-brand-dark/20 pt-6 reveal delay-100">
+          <span class="font-serif text-2xl text-brand-accent">01</span>
+          <h3 class="text-base font-medium text-brand-dark">Escuta & Anamnese</h3>
+          <p class="text-xs text-brand-muted leading-relaxed font-light">
+            Compreendemos detalhadamente o que incomoda você no espelho, histórico médico e procedimentos prévios.
+          </p>
+        </div>
+
+        <div class="space-y-3 border-t border-brand-dark/20 pt-6 reveal delay-200">
+          <span class="font-serif text-2xl text-brand-accent">02</span>
+          <h3 class="text-base font-medium text-brand-dark">Fotografia Clínica</h3>
+          <p class="text-xs text-brand-muted leading-relaxed font-light">
+            Registro padronizado sob iluminação controlada para mapear proporções, ângulos faciais e pontos de luz.
+          </p>
+        </div>
+
+        <div class="space-y-3 border-t border-brand-dark/20 pt-6 reveal delay-300">
+          <span class="font-serif text-2xl text-brand-accent">03</span>
+          <h3 class="text-base font-medium text-brand-dark">Plano Individualizado</h3>
+          <p class="text-xs text-brand-muted leading-relaxed font-light">
+            Apresentação do que trará benefício estético verdadeiro — e orientação transparente do que não deve ser tocado.
+          </p>
+        </div>
+
+        <div class="space-y-3 border-t border-brand-dark/20 pt-6 reveal delay-400">
+          <span class="font-serif text-2xl text-brand-accent">04</span>
+          <h3 class="text-base font-medium text-brand-dark">Execução Confortável</h3>
+          <p class="text-xs text-brand-muted leading-relaxed font-light">
+            Procedimento conduzido com controle eficiente da dor e suporte pós-atendimento para acompanhar sua recuperação.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 7. FAQ ACORDEON (Dúvidas Clínicas Reais)                          -->
+    <!-- ================================================================= -->
+    <section id="faq" class="py-24 bg-brand-surface/30 border-y border-brand-surface">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-16 reveal">
+          <span class="text-xs uppercase tracking-[0.2em] text-brand-accent font-medium">Segurança e Esclarecimentos</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-brand-dark mt-2 font-normal">
+            Dúvidas Frequentes
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          
+          <div class="faq-item bg-brand-card border border-brand-surface transition-colors reveal delay-100">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center text-sm sm:text-base font-medium text-brand-dark">
+              <span>Harmonização facial pode deixar meu rosto artificial ou modificado?</span>
+              <span class="faq-icon text-brand-accent transition-transform duration-200 text-lg font-light">+</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-brand-muted font-light leading-relaxed">
+              O resultado artificial decorre de excessos de produto ou injeção no plano anatômico incorreto. A conduta da Dra. Bruna Santana é pautada na moderação: doses calculadas com precisão para realçar sua estrutura natural, garantindo que você continue se reconhecendo no espelho.
+            </div>
+          </div>
+
+          <div class="faq-item bg-brand-card border border-brand-surface transition-colors reveal delay-200">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center text-sm sm:text-base font-medium text-brand-dark">
+              <span>O preenchimento com ácido hialurônico é reversível?</span>
+              <span class="faq-icon text-brand-accent transition-transform duration-200 text-lg font-light">+</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-brand-muted font-light leading-relaxed">
+              Sim. Utilizamos exclusivamente produtos biocompatíveis e reabsorvíveis. Dispomos no consultório da enzima hialuronidase, capaz de dissolver o produto com agilidade e total segurança caso seja necessário reverter qualquer ponto.
+            </div>
+          </div>
+
+          <div class="faq-item bg-brand-card border border-brand-surface transition-colors reveal delay-300">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center text-sm sm:text-base font-medium text-brand-dark">
+              <span>O procedimento dói? Posso trabalhar no mesmo dia?</span>
+              <span class="faq-icon text-brand-accent transition-transform duration-200 text-lg font-light">+</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-brand-muted font-light leading-relaxed">
+              Graças à sólida experiência cirúrgica da Dra. Bruna Santana, o protocolo anestésico é planejado para tornar a aplicação confortável e tranquila. Na maioria das condutas, o retorno ao trabalho é liberado no mesmo dia, atentando-se apenas a cuidados básicos com inchaço local temporário.
+            </div>
+          </div>
+
+          <div class="faq-item bg-brand-card border border-brand-surface transition-colors reveal delay-400">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center text-sm sm:text-base font-medium text-brand-dark">
+              <span>Por que a base cirúrgica e odontológica faz a diferença na harmonização?</span>
+              <span class="faq-icon text-brand-accent transition-transform duration-200 text-lg font-light">+</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-xs sm:text-sm text-brand-muted font-light leading-relaxed">
+              A Odontologia dedica a formação acadêmica exclusivamente ao terço craniofacial. A união de 11 anos de graduação pela UFCG e pós-graduação cirúrgica pela UNIFIP proporciona domínio exato das artérias, músculos e ramos nervosos, garantindo destreza técnica e segurança em cada aplicação.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 8. BANNER FINAL / AGENDAMENTO COM ENDEREÇO REAL                  -->
+    <!-- ================================================================= -->
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center space-y-8 reveal">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-medium">Atendimento Presencial</span>
+      
+      <h2 class="text-3xl sm:text-5xl font-serif text-brand-dark font-normal leading-tight">
+        Descubra o plano ideal para a <br/><span class="italic font-normal">harmonia do seu rosto.</span>
+      </h2>
+      
+      <p class="text-sm sm:text-base text-brand-muted max-w-lg mx-auto font-light leading-relaxed">
+        Agende sua consulta e converse com a Dra. Bruna Santana em um ambiente acolhedor, planejado para o seu conforto e segurança.
+      </p>
+
+      <div class="pt-4">
+        <a href="https://wa.me/5583996343411?text=Ol%C3%A1%2C%20Dra.%20Bruna!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-block bg-brand-dark text-white px-10 py-5 text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors duration-200">
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+      
+      <div class="text-xs text-brand-muted space-y-1 pt-2">
+        <p class="font-medium text-brand-dark">Consultório Dra. Bruna Santana</p>
+        <p>Rua Horácio Nóbrega, 199 - Loja 199, Piso L1, Bela Vista · Patos - PB</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- 9. RODAPÉ INSTITUCIONAL (CFO / CRO-PB Compliant)                 -->
+  <!-- ================================================================= -->
+  <footer class="bg-brand-dark text-white py-16 border-t border-brand-surface/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+        
+        <div class="md:col-span-6 space-y-3">
+          <p class="text-xl font-serif tracking-widest uppercase">DRA. BRUNA SANTANA</p>
+          <p class="text-xs text-white/60 font-light">Cirurgiã-Dentista · Harmonização Orofacial</p>
+          <p class="text-xs text-white/60 font-light">Registro Profissional: <strong>CRO-PB 5485</strong></p>
+          <p class="text-xs text-white/60 font-light">Pós-Graduada em Cirurgia Oral Menor (UNIFIP) · Graduada UFCG</p>
+        </div>
+
+        <div class="md:col-span-6 md:text-right space-y-2 text-xs text-white/60 font-light">
+          <p class="text-white/80 font-medium">Localização do Atendimento</p>
+          <p>Rua Horácio Nóbrega, 199 - Loja 199, Piso L1</p>
+          <p>Bairro Bela Vista · Patos - PB</p>
+          <p>WhatsApp Comercial: (83) 99634-3411</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 space-y-4 sm:space-y-0">
+        <p>© <span id="year"></span> Dra. Bruna Santana. Todos os direitos reservados.</p>
+        <p class="text-center sm:text-right max-w-md">
+          Aviso ético: O conteúdo deste site tem caráter estritamente educativo e informativo. Resultados clínicos são individuais e dependem da biologia de cada organismo.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5583996343411?text=Ol%C3%A1%2C%20Dra.%20Bruna!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all duration-200 z-50 flex items-center justify-center" 
+     aria-label="Falar pelo WhatsApp com Dra. Bruna">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- ================================================================= -->
+  <!-- 10. SCRIPTS: IntersectionObserver, Menu & FAQ                     -->
+  <!-- ================================================================= -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu Mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // FAQ Acordeon
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-btn');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      btn.addEventListener('click', () => {
+        const isHidden = content.classList.contains('hidden');
+        
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => {
+          i.textContent = '+';
+        });
+
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.textContent = '−';
+        }
+      });
+    });
+
+    // SCROLL REVEAL OBSERVER
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.08
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-zoom').forEach(element => {
+      revealObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
